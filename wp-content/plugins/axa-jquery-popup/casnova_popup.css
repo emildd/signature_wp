@@ -1,0 +1,46 @@
+	@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700);
+	/* Popup CSS */
+	#backgroundPopup{
+		display:none;
+		position:fixed;
+		_position:absolute; /* hack for internet explorer 6*/
+		height:100%;
+		width:100%;
+		top:0;
+		left:0;
+		background:#000000;
+		z-index:99900;
+	}
+	#popupContact{
+		display:block;
+		position:fixed;
+		_position:absolute; /* hack for internet explorer 6*/
+		z-index:99999;
+		text-align: center;
+	}
+	#popupContactClose{
+		line-height:64px;
+		right:6px;
+		top:4px;
+	}
+	#popupContactClose span{
+		display:block;
+		width:25px;
+		height:25px;
+		background:url(close_button.png) no-repeat;
+		float:right;
+	}
+	.upper {
+		border-top-right-radius: 10px;
+		border-top-left-radius: 10px;
+	}
+	.bottom p{
+		font-family: 'PT Sans', sans-serif;
+		color:#fff;
+	}
+	.bottom{
+		padding-top:10px;
+		padding-bottom:20px;
+		border-bottom-right-radius: 10px;
+		border-bottom-left-radius: 10px;
+	}
