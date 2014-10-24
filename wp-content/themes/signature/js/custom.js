@@ -51,4 +51,71 @@ jQuery(document).ready(function() {
     
     jQuery('#masonry .main-article').each( function() { jQuery(this).hoverdir(); } );
     
-});	
+
+		
+				jQuery('.iosSlider').iosSlider({
+					desktopClickDrag: true,
+					snapToChildren: true,
+					infiniteSlider: true,
+					snapSlideCenter: true,
+					navSlideSelector: '.sliderContainer .slideSelectors .item',
+					navPrevSelector: '.sliderContainer .slideSelectors .prev',
+					navNextSelector: '.sliderContainer .slideSelectors .next',
+					onSlideComplete: slideComplete,
+					onSliderLoaded: sliderLoaded,
+					onSlideChange: slideChange,
+					autoSlide: true,
+					scrollbar: true,
+					scrollbarContainer: '.sliderContainer .scrollbarContainer',
+					scrollbarMargin: '0',
+					scrollbarBorderRadius: '0',
+					keyboardControls: true
+				});
+			
+			});
+			
+			function slideChange(args) {
+						
+				jQuery('.sliderContainer .slideSelectors .item').removeClass('selected');
+				jQuery('.sliderContainer .slideSelectors .item:eq(' + (args.currentSlideNumber - 1) + ')').addClass('selected');
+			
+			}
+			
+			function slideComplete(args) {
+				
+				if(!args.slideChanged) return false;
+					
+				jQuery(args.sliderObject).find('.text1, .text2').attr('style', '');
+				
+				jQuery(args.currentSlideObject).find('.text1').animate({
+					left: '30px',
+					opacity: '0.8'
+				}, 700, 'easeOutQuint');
+				
+				jQuery(args.currentSlideObject).find('.text2').delay(200).animate({
+					left: '30px',
+					opacity: '0.8'
+				}, 600, 'easeOutQuint');
+				
+			}
+			
+			function sliderLoaded(args) {
+					
+				jQuery(args.sliderObject).find('.text1, .text2').attr('style', '');
+				
+				jQuery(args.currentSlideObject).find('.text1').animate({
+					left: '30px',
+					opacity: '0.8'
+				}, 700, 'easeOutQuint');
+				
+				jQuery(args.currentSlideObject).find('.text2').delay(200).animate({
+					left: '30px',
+					opacity: '0.8'
+				}, 600, 'easeOutQuint');
+				
+				slideChange(args);
+				
+			}
+
+
+

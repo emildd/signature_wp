@@ -19,6 +19,8 @@
 </head>
 
 <body <?php body_class(); ?>>
+	
+
 <div id="parallax-bg" data-stellar-background-ratio="1.3"></div>
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
@@ -63,6 +65,67 @@
 	</div>
 	</div><!--#top-bar-->
 	<header id="masthead" class="site-header row container" role="banner">
+		  <section class = 'iosSliderDemo'>
+			
+			<div class = 'fluidHeight'>
+				
+				<div class = 'sliderContainer'>
+				
+					<div class = 'iosSlider'>
+					
+						<div class = 'slider'>
+						<?php
+					  		$slider_flag = false;
+					  		for ($i=1;$i<4;$i++) {
+								if ( of_get_option('slide'.$i, true) != "" ) {?>
+								
+								<div class = "item item<?=$i?>">
+									<div class = 'inner'>
+											<?php echo "<a href='".of_get_option('slideurl'.$i, true)."'><img src='".of_get_option('slide'.$i, true)."' title='".of_get_option('slidetitle'.$i, true)."'></a>"; 
+									   
+									$slider_flag = true;?>
+											<div class = 'selectorShadow'></div>
+											
+											<div class = 'text1'><span>Lorem ipsum</span></div>
+								
+											<div class = 'text2'><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit,<br />sed do eiusmod tempor incididunt ut labore et dolore.</span></div>
+										</div>
+									</div>
+									
+								<?php }
+							}
+			           ?>
+							
+							
+						
+						</div>
+					
+					</div>
+					
+					<div class = 'slideSelectors'>
+						
+						<div class = 'prev'></div>
+						
+						<div class = 'item selected'></div>
+						
+						<div class = 'item'></div>
+						
+						<div class = 'item'></div>
+						
+						<div class = 'item'></div>
+						
+						<div class = 'item'></div>
+						
+						<div class = 'next'></div>
+					
+					</div>
+					
+					<div class = 'scrollbarContainer'></div>
+					
+				</div>
+			
+			</div>
+	</section>
 		<div class="site-branding col-md-12">
 		<?php if((of_get_option('logo', true) != "") && (of_get_option('logo', true) != 1) ) { ?>
 			<h1 class="site-title logo-container"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
@@ -109,23 +172,12 @@
     if ( ( ( of_get_option('slider_enabled') != 0 ) && (is_home() ) )
 		|| ( (of_get_option('slider_enabled_front') != 0 ) && (is_front_page() ) ) ) 
 		{ ?>
-    <div id="slider-wrapper" class='container'>
-    <ul id="slider">
-    	<?php
-		  		$slider_flag = false;
-		  		for ($i=1;$i<4;$i++) {
-					if ( of_get_option('slide'.$i, true) != "" ) {
-						echo "<div class='xslide'><a href='".of_get_option('slideurl'.$i, true)."'><img src='".of_get_option('slide'.$i, true)."' title='".of_get_option('slidetitle'.$i, true)."'></a></div>"; 
-						   
-						$slider_flag = true;
-					}
-				}
-           ?>
-     </ul>   
-	</div>
+
+
     
     <?php } 
 	?>
 	
 	<div id="content" class="site-content row">
 		<div class="container col-md-12"> 
+

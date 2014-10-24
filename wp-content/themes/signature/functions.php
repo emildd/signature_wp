@@ -136,6 +136,8 @@ function inkzine_scripts() {
 	
 	wp_enqueue_style( 'inkzine-nivo-lightbox-default-theme', get_template_directory_uri()."/css/nivo/lightbox/themes/default/default.css" );
 	
+	wp_enqueue_script( 'inkzine-iosslider', get_template_directory_uri() . '/js/jquery.iosslider.js', array('jquery') );
+	
 	wp_enqueue_script( 'inkzine-sliphover', get_template_directory_uri() . '/js/sliphover.js', array('jquery') );
 				
 	wp_enqueue_script( 'inkzine-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery') );
@@ -145,6 +147,8 @@ function inkzine_scripts() {
 	wp_enqueue_script( 'inkzine-stellar', get_template_directory_uri() . '/js/stellar.js', array('jquery') );
 	
 	wp_enqueue_script( 'inkzine-custom', get_template_directory_uri() . '/js/custom.js', array('jquery') );
+
+	wp_enqueue_script( 'inkzine-easing', get_template_directory_uri() . '/js/jquery.easing-1.3.js', array('jquery') );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
